@@ -1,0 +1,67 @@
+.flip-container {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+  }
+
+.flipper{
+	width: 50%;
+	height: 50%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper{
+	transform: rotateY(180deg);
+	/* se quiser uma animação na vertical,
+	troque por rotateX(180deg)
+	*/
+}
+
+.front, .back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*Faz com que a parte de traz do elemento não seja exibida quando rotacionada*/
+	backface-visibility: hidden;
+}
+
+.back{
+	transform: rotateY(180deg);
+}
+
+/**================================**/
+
+.flip-container2 {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+  }
+
+.flipper2{
+	width: 50%;
+	height: 50%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+
+#switch:checked ~ .flip-container2 .flipper2 {
+	transform: rotateY(180deg);
+  }
+  
+
+.front2, .back2{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*Faz com que a parte de traz do elemento não seja exibida quando rotacionada*/
+	backface-visibility: hidden;
+}
+
+.back2{
+	transform: rotateY(180deg);
+}
+
+#switch{
+	display: none;
+}
