@@ -33,15 +33,14 @@
   
         Marks: <input type="text" name="marks"
             id="marks"><br><br>
-  
+
+           
+        <label for="submit">
+        <img src="./img/41-frente.jpg" id="ibagens">
+
         <!-- Button to invoke the modal -->
-        <button type="button" class="btn btn-primary 
-            btn-sm" data-toggle="modal" 
-            data-target="#exampleModal"
-            id="submit">
-            Submit
-        </button>
-  
+        <button hidden type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" id="submit">Submit1</button>
+        </label>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" 
             tabindex="-1" 
@@ -72,12 +71,14 @@
                             in this part of the 
                             modal body -->
                         <h6 id="modal_body"></h6>
+                        <div id="imagemDinamica">
+                        </div>
                         <button type="button" 
                             class="btn btn-success btn-sm" 
                             data-toggle="modal"
                             data-target="#exampleModal" 
                             id="submit">
-                            Submit
+                            Submit2
                         </button>
                     </div>
                 </div>
@@ -89,10 +90,14 @@
         $("#submit").click(function () {
             var name = $("#name").val();
             var marks = $("#marks").val();
+            var img = $('#ibagens').attr("src");
             var str = "You Have Entered " 
                 + "Name: " + name 
-                + " and Marks: " + marks;
+                + " and Marks: " + marks + " - " + img;
             $("#modal_body").html(str);
+
+            var test3 = "<img id='ibagemPassada' src='" + img + "'><br>";
+            $("#imagemDinamica").html(test3);            
         });
     </script>
 </body>
